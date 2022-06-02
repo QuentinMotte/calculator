@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
+* {
+    font-family: "Kdam Thmor Pro";
+}
+section {
+    border: 2px solid grey;
+    background: rgba(238, 234, 234, 0.445);
+    border-radius: 10px;
+    max-width: 450px;
+    margin: 0 auto;
+}
+section::before {
+    content: "K-zio";
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 18px;
+    font-size: 2rem;
+}
+.app {
+    display: grid;
+    margin: 50px 10px 10px 10px;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 100px repeat(5, 50px);
+    grid-template-areas:
+        "result result result result"
+        "7 8 9 reset"
+        "4 5 6 reset"
+        "1 2 3 reset"
+        "0 dot plus minus"
+        " times equal equal equal";
+    border-radius: 4px;
+}
+h2 {
+    text-align: right;
+    padding: 10px 5px 0 5px;
+    margin: 10px 0 10px 0;
+    font-size: 2.5rem;
+    grid-area: result;
+    border: 2px solid rgb(201, 195, 195);
+    border-radius: 6px;
+}
+
+button {
+    background: rgb(230, 226, 226);
+    color: rgb(37, 38, 39);
+    border: 1px solid whitesmoke;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 1.5rem;
+}
+button:hover {
+    background: rgb(99, 96, 96);
+    color: aliceblue;
+    box-shadow: 0 0 20px 20px #ecece954;
+    filter: brightness(110%);
+}
+#equal {
+    background: rgb(241, 163, 18);
+}
+#equal:hover {
+    background: rgb(241, 163, 18);
+    filter: brightness(110%);
+}
+.reset {
+    background: rgb(238, 69, 39);
+}
+.reset:hover {
+    background: rgb(238, 69, 39);
+    filter: brightness(110%);
+}
