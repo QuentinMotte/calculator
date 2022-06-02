@@ -2,27 +2,43 @@
 * {
     font-family: "Kdam Thmor Pro";
 }
+body {
+    background: rgb(207, 207, 231);
+    position: relative;
+    overflow: hidden;
+}
+body::after {
+    position: absolute;
+    content: "";
+    background: rgb(162, 162, 199);
+    min-width: 2500px;
+    min-height: 1500px;
+    z-index: -10;
+    transform: rotate(-30deg) translateY(-450px);
+}
 section {
     border: 2px solid grey;
     background: rgba(238, 234, 234, 0.445);
     border-radius: 10px;
     max-width: 450px;
     margin: 0 auto;
+    box-shadow: -1px 10px 9px 0px rgba(128, 128, 128, 0.616);
 }
+
 section::before {
     content: "K-zio";
     text-transform: uppercase;
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    top: 18px;
+    top: 10px;
     font-size: 2rem;
 }
 .app {
     display: grid;
     margin: 50px 10px 10px 10px;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 100px repeat(5, 50px);
+    grid-template-rows: 120px repeat(5, 80px);
     grid-template-areas:
         "result result result result"
         "7 8 9 reset"
@@ -34,12 +50,15 @@ section::before {
 }
 h2 {
     text-align: right;
-    padding: 10px 5px 0 5px;
+    padding: 18px 5px 0 5px;
     margin: 10px 0 10px 0;
     font-size: 2.5rem;
     grid-area: result;
-    border: 2px solid rgb(201, 195, 195);
+    border: 5px solid rgb(201, 195, 195);
     border-radius: 6px;
+    color: aliceblue;
+    background: rgba(58, 57, 57, 0.938);
+    border-style: inset;
 }
 
 button {

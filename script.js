@@ -51,19 +51,39 @@ buttons.forEach((btn) => {
     if (btn.id !== "=") {
         btn.addEventListener("click", (e) => {
             result.textContent += e.target.id;
+
+            if (result.textContent.length > 18) {
+                alert("Impossible d'afficher plus de chiffres");
+            }
         });
     }
 });
 
 let resetBtn = document.getElementById("C"); // -> ID reset
 resetBtn.classList.add("reset");
-
 let equalBtn = document.getElementById("=");
 equalBtn.setAttribute("id", "equal");
 equalBtn.addEventListener("click", () => {
     result.textContent = eval(result.textContent);
+    if (result.textContent.length > 18) {
+        alert("err");
+    }
 });
-
 resetBtn.addEventListener("click", () => {
     result.textContent = " ";
+});
+// -> Attribuer les boutons de la calculette au touches du clavier
+document.body.addEventListener("keypress", () => {
+    if (event.key !== "=" && event.key !== "Enter")
+        result.textContent += event.key;
+});
+document.body.addEventListener("keypress", () => {
+    if (event.key == "=" || event.key == "Enter") {
+        result.textContent = eval(result.textContent);
+    }
+});
+document.body.addEventListener("keypress", () => {
+    if (event.key == "c") {
+        result.textContent = " ";
+    }
 });
